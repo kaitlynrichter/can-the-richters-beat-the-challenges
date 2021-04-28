@@ -1,3 +1,6 @@
+namespace SpriteKind {
+    export const trailer = SpriteKind.create()
+}
 let levels = [img`
     f f f f f f f f f f f f f f f f 
     f f f f f f f f f f f f f f f f 
@@ -15,6 +18,57 @@ let levels = [img`
     f f f f f f f f f f f f f f f f 
     f f f f f f f f f f f f f f f f 
     f f f f f f f f f f f f f f f f 
+    `, img`
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    `, img`
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    `, img`
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
     `]
 scene.setTile(1, img`
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
@@ -88,3 +142,41 @@ scene.setTile(3, img`
     f f f f f f f f f f f f f f f f 
     f f f f f f f f f f f f f f f f 
     `, true)
+let nextLevel = 0
+let mySprite = sprites.create(img`
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f 2 2 2 2 f f f f f f f 
+    f f f f 2 2 2 2 2 2 f f f f f f 
+    f f f f 2 2 2 2 2 2 f f f f f f 
+    f f f f f 2 2 2 2 f f f f f f f 
+    f f f f f f 2 2 f f f f f f f f 
+    f f f f f f 2 2 f f f f f f f f 
+    f f f 2 2 2 2 2 2 2 2 f f f f f 
+    f f f f f f 2 2 f f f f f f f f 
+    f f f f f f 2 2 f f f f f f f f 
+    f f f f f f 2 2 f f f f f f f f 
+    f f f f f 2 f f 2 f f f f f f f 
+    f f f f 2 f f f f 2 f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    `, SpriteKind.Player)
+let trail = sprites.create(img`
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    `, SpriteKind.trailer)
+trail.follow(mySprite, 100)
