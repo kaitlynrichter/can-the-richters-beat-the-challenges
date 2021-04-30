@@ -1,7 +1,18 @@
 namespace SpriteKind {
     export const trailer = SpriteKind.create()
 }
-let levels = [img`
+scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
+    scene.setTileMap(levels[2])
+})
+scene.onHitTile(SpriteKind.Player, 3, function (sprite) {
+    scene.setTileMap(levels[3])
+})
+scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
+    scene.setTileMap(levels[nextLevel])
+})
+let nextLevel = 0
+let levels: Image[] = []
+levels = [img`
     f f f f f f f f f f f f f f f f 
     f f f f f f f f f f f f f f f f 
     f f f f f f f f f f f f f f f f 
@@ -142,7 +153,7 @@ scene.setTile(3, img`
     f f f f f f f f f f f f f f f f 
     f f f f f f f f f f f f f f f f 
     `, true)
-let nextLevel = 0
+nextLevel = 0
 let mySprite = sprites.create(img`
     f f f f f f f f f f f f f f f f 
     f f f f f f f f f f f f f f f f 
@@ -180,3 +191,5 @@ let trail = sprites.create(img`
     7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
     `, SpriteKind.trailer)
 trail.follow(mySprite, 100)
+trail.setPosition(7, 47)
+controller.moveSprite(mySprite, 100, 100)
