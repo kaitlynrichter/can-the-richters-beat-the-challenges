@@ -10,9 +10,9 @@ scene.onHitTile(SpriteKind.Player, 3, function (sprite) {
 scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
     scene.setTileMap(levels[nextLevel])
 })
-let nextLevel = 0
 let levels: Image[] = []
-levels = [img`
+let nextLevel = 0
+let choose_character = [img`
     f f f f f f f f f f f f f f f f 
     f f f f f f f f f f f f f f f f 
     f f f f f f f f f f f f f f f f 
